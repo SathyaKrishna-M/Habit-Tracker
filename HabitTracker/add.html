@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Habit — HabitTracker</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="dark">
+
+<div class="app-shell">
+  <nav id="navbar"></nav>
+
+  <main class="main-content">
+    <div class="page-header">
+      <h1>Add New Habit ➕</h1>
+      <p>Define a habit with a category, goal, and optional time reminder.</p>
+    </div>
+
+    <div class="card">
+      <form class="add-form" id="addHabitForm" novalidate>
+
+        <!-- Name -->
+        <div class="form-group">
+          <label class="form-label" for="habitName">Habit Name *</label>
+          <input type="text" id="habitName" placeholder="e.g. Drink 8 glasses of water" maxlength="60" autocomplete="off">
+          <span class="field-error" id="nameError" style="color:var(--danger);font-size:0.8rem;display:none;">Please enter a habit name.</span>
+        </div>
+
+        <div class="form-row">
+          <!-- Category -->
+          <div class="form-group">
+            <label class="form-label" for="habitCategory">Category</label>
+            <select id="habitCategory">
+              <option value="Health">🌿 Health</option>
+              <option value="Study">📚 Study</option>
+              <option value="Fitness">💪 Fitness</option>
+              <option value="Money">💰 Money</option>
+              <option value="Other">🌀 Other</option>
+            </select>
+          </div>
+
+          <!-- Time Reminder -->
+          <div class="form-group">
+            <label class="form-label" for="habitTime">Reminder Time (optional)</label>
+            <input type="time" id="habitTime">
+          </div>
+        </div>
+
+        <!-- Goal -->
+        <div class="form-group">
+          <label class="form-label" for="habitGoal">Daily Goal (optional)</label>
+          <input type="text" id="habitGoal" placeholder="e.g. Read 10 pages / Walk 5000 steps" maxlength="80">
+        </div>
+
+        <div style="display:flex;gap:0.75rem;justify-content:flex-end;flex-wrap:wrap;">
+          <a href="index.html" class="btn btn-secondary">Cancel</a>
+          <button type="submit" class="btn btn-primary">💾 Save Habit</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Recently Added -->
+    <div style="margin-top:2rem;">
+      <h2 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Your Habits</h2>
+      <div id="habitList" class="habit-list"></div>
+      <p id="emptyMsg" style="color:var(--text2);font-size:0.9rem;" class="empty-state" style="display:none;">
+        <span class="empty-icon">📋</span><br>No habits tracked yet. Add your first one above!
+      </p>
+    </div>
+  </main>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/add.js"></script>
+</body>
+</html>

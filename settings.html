@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings — HabitTracker</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="dark">
+
+<div class="app-shell">
+  <nav id="navbar"></nav>
+
+  <main class="main-content">
+    <div class="page-header">
+      <h1>Settings ⚙️</h1>
+      <p>Customize the app, manage your data, and control your account.</p>
+    </div>
+
+    <div class="settings-section">
+
+      <!-- Appearance -->
+      <h2 style="font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text2);margin-top:0.5rem;">Appearance</h2>
+
+      <div class="settings-row">
+        <div>
+          <div class="settings-label">Dark Mode</div>
+          <div class="settings-sublabel">Switch between dark and light theme</div>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Danger Zone -->
+      <h2 style="font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--danger);margin-top:0.5rem;">Danger Zone</h2>
+
+      <div class="settings-row" style="border-color:var(--danger);">
+        <div>
+          <div class="settings-label" style="color:var(--danger);">Reset All Data</div>
+          <div class="settings-sublabel">Permanently delete all habits and progress</div>
+        </div>
+        <button class="btn btn-danger" id="resetBtn">🗑️ Reset</button>
+      </div>
+
+      <!-- Account -->
+      <h2 style="font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text2);margin-top:0.5rem;">Account</h2>
+
+      <div class="settings-row">
+        <div>
+          <div class="settings-label">Logged in as</div>
+          <div class="settings-sublabel" id="loggedInAs">—</div>
+        </div>
+        <button class="btn btn-secondary" id="settingsLogout">↩ Logout</button>
+      </div>
+
+      <!-- App Info -->
+      <div style="text-align:center;color:var(--text2);font-size:0.8rem;margin-top:1.5rem;">
+        HabitTracker v2.0 · Built with HTML, CSS, Vanilla JS
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

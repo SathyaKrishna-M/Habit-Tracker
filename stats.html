@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stats — HabitTracker</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="dark">
+
+<div class="app-shell">
+  <nav id="navbar"></nav>
+
+  <main class="main-content">
+    <div class="page-header">
+      <h1>Analytics 📊</h1>
+      <p>Track your progress, streaks, and gamification achievements.</p>
+    </div>
+
+    <!-- Summary Stats -->
+    <div class="stat-grid" id="statGrid" style="margin-bottom:1.5rem;"></div>
+
+    <!-- XP & Level -->
+    <div class="card xp-card" id="xpCard" style="margin-bottom:1.5rem;">
+      <div class="level-badge" id="levelBadge">🌱</div>
+      <div class="xp-info">
+        <div class="xp-level" id="xpLevel">Beginner</div>
+        <div class="xp-label" id="xpLabel">0 XP</div>
+        <div class="xp-bar-wrap"><div class="xp-bar" id="xpBar" style="width:0%"></div></div>
+        <div class="xp-numbers" id="xpNumbers"></div>
+      </div>
+    </div>
+
+    <!-- Weekly Chart -->
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h2 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">This Week</h2>
+      <div class="bar-chart" id="weekChart"></div>
+    </div>
+
+    <!-- Monthly Success Rate -->
+    <div class="card" style="margin-bottom:1.5rem;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+        <h2 style="font-size:1rem;font-weight:700;">This Month</h2>
+        <span id="monthRate" style="font-weight:800;font-size:1.25rem;color:var(--accent);">0%</span>
+      </div>
+      <div class="progress-container"><div class="progress-fill" id="monthBar" style="width:0%"></div></div>
+      <p id="monthSub" style="font-size:0.8rem;color:var(--text2);margin-top:0.5rem;"></p>
+    </div>
+
+    <!-- Per-Habit Stats Table -->
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h2 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Per-Habit Breakdown</h2>
+      <div id="habitTable" style="overflow-x:auto;"></div>
+    </div>
+
+    <!-- Badges -->
+    <div class="card">
+      <h2 style="font-size:1rem;font-weight:700;">Badges 🏆</h2>
+      <div class="badges-grid" id="badgesGrid"></div>
+    </div>
+  </main>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/stats.js"></script>
+</body>
+</html>

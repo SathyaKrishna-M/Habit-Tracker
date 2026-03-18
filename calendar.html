@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar — HabitTracker</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="dark">
+
+<div class="app-shell">
+  <nav id="navbar"></nav>
+
+  <main class="main-content">
+    <div class="page-header">
+      <h1>Calendar 📅</h1>
+      <p>GitHub-style heatmap of your habit completions over the last year.</p>
+    </div>
+
+    <!-- Habit Filter -->
+    <div class="card" style="margin-bottom:1.5rem;">
+      <label class="form-label" for="habitFilter" style="margin-bottom:0.5rem;display:block;">Filter by Habit</label>
+      <select id="habitFilter"></select>
+    </div>
+
+    <!-- Heatmap Legend -->
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;font-size:0.78rem;color:var(--text2);">
+      <span>Less</span>
+      <span class="heatmap-cell"></span>
+      <span class="heatmap-cell" data-level="1"></span>
+      <span class="heatmap-cell" data-level="2"></span>
+      <span class="heatmap-cell" data-level="3"></span>
+      <span class="heatmap-cell" data-level="4"></span>
+      <span>More</span>
+    </div>
+
+    <!-- Heatmap -->
+    <div class="card heatmap-section">
+      <div class="heatmap-scroll">
+        <div class="heatmap-months" id="heatmapMonths"></div>
+        <div id="heatmapGrid"></div>
+      </div>
+    </div>
+
+    <!-- Year Summary -->
+    <div class="stat-grid" id="calStatGrid" style="margin-top:1.5rem;"></div>
+
+  </main>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/calendar.js"></script>
+</body>
+</html>
